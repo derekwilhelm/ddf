@@ -24,20 +24,12 @@
         <argument ref="catalogService"/>
     </bean>
 
-    <jaxrs:server id="restService" address="/catalog">
-        <jaxrs:serviceBeans>
-            <ref component-id="restSvc"/>
-        </jaxrs:serviceBeans>
-
-        <jaxrs:inInterceptors>
-            <bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpInInterceptor">
-                <property name="callbackParam" value="callback"/>
-            </bean>
-        </jaxrs:inInterceptors>
-        <jaxrs:outInterceptors>
-            <bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPreStreamInterceptor"/>
-            <bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPostStreamInterceptor"/>
-        </jaxrs:outInterceptors>
-    </jaxrs:server>
+    <service interface="javax.servlet.Servlet" ref="restSvc">
+        <service-properties>
+            <entry key="osgi.http.whiteboard.servlet.name" value="rest-endpoint"/>
+            <entry key="osgi.http.whiteboard.servlet.pattern" value="/services/catalog/*"/>
+            <entry key="osgi.http.whiteboard.servlet.asyncSupported" value="true"/>
+        </service-properties>
+    </service>
 
 </blueprint>

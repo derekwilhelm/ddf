@@ -263,5 +263,13 @@
     </cm:managed-service-factory>
 
     <service ref="CswSubscriptionSvc" interface="ddf.catalog.event.Subscriber"/>
+    
+    <service interface="javax.servlet.Servlet" ref="cswServlet">
+        <service-properties>
+            <entry key="osgi.http.whiteboard.servlet.name" value="csw-endpoint"/>
+            <entry key="osgi.http.whiteboard.servlet.pattern" value="/services/csw/*"/>
+            <entry key="osgi.http.whiteboard.servlet.asyncSupported" value="true"/>
+        </service-properties>
+    </service>
 
 </blueprint>

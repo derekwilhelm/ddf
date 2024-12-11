@@ -31,9 +31,11 @@
         <feature>cxf</feature>
         <feature>camel</feature>
         <feature>camel-cxf</feature>
+        <feature>pax-web-http-war</feature>
+        <feature>pax-web-http-whiteboard</feature>
         <feature>security-core-api</feature>
-        <feature>war</feature>
         <feature>ddf-branding</feature>
+        <feature>webconsole</feature>
     </feature>
 
     <feature name="platform-core" version="${project.version}"

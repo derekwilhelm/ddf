@@ -128,11 +128,6 @@
             <version>${jts.geotools.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.codice.thirdparty</groupId>
-            <artifactId>lucene-core</artifactId>
-            <version>3.0.2_1</version>
-        </dependency>
-        <dependency>
             <groupId>ddf.catalog.core</groupId>
             <artifactId>ddf-pubsub</artifactId>
             <version>${project.version}</version>
@@ -146,6 +141,11 @@
             <groupId>ddf.catalog.core</groupId>
             <artifactId>ddf-pubsub-tracker</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codice.thirdparty</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>3.0.2_1</version>
         </dependency>
         <dependency>
             <groupId>ddf.catalog.core</groupId>
